@@ -68,14 +68,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Setup
-        run: npm i -g @antfu/ni
-
       - name: Install
-        run: nci
+        run: npm install
 
       - name: Build
-        run: nr build
+        run: npm run build
 
       - name: Test
-        run: nr test
+        run: npm run test
