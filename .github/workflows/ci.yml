@@ -23,14 +23,11 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Setup
-        run: npm i -g @antfu/ni
-
       - name: Install
-        run: nci
+        run: npm install
 
       - name: Lint
-        run: nr lint
+        run: npm run lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -45,14 +42,11 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Setup
-        run: npm i -g @antfu/ni
-
       - name: Install
-        run: nci
+        run: npm install
 
       - name: Typecheck
-        run: nr typecheck
+        run: npm run typecheck
 
   test:
     runs-on: ${{ matrix.os }}
